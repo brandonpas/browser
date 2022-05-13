@@ -267,15 +267,6 @@ header {
     }
   }
 
-  .left + .search,
-  .left + .sr-only + .search {
-    padding-left: 0;
-
-    .bwi {
-      left: 10px;
-    }
-  }
-
   .search + .right {
     margin-left: -10px;
   }

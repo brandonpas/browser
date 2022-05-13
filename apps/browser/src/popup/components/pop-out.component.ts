@@ -10,6 +10,7 @@ import { PopupUtilsService } from "../services/popup-utils.service";
 })
 export class PopOutComponent implements OnInit {
   @Input() show = true;
+  showPopoutButton = false;
 
   constructor(
     private platformUtilsService: PlatformUtilsService,
@@ -17,6 +18,7 @@ export class PopOutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.showPopoutButton = this.popupUtilsService.inPopup(window);
     if (this.show) {
       if (this.popupUtilsService.inSidebar(window) && this.platformUtilsService.isFirefox()) {
         this.show = false;
